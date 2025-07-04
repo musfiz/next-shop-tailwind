@@ -28,10 +28,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header toggleSidebar={toggleSidebar} isMobile={isMobile} />
+      <Header toggleSidebar={toggleSidebar} />
       <div className="flex pt-16">
-        <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} isMobile={isMobile} />
-        <main className={`flex-1 transition-all duration-300 ${sidebarOpen && !isMobile ? 'ml-64' : ''}`}>
+        <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+        <main className={`flex-1 transition-all duration-300`}>
           {children}
         </main>
       </div>

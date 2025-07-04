@@ -2,18 +2,16 @@
 import { Bars3Icon, MagnifyingGlassIcon, UserIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
 
 export default function Header({
-  toggleSidebar,
-  isMobile,
+  toggleSidebar
 }: {
   toggleSidebar: () => void;
-  isMobile: boolean;
 }) {
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-white shadow-sm">
-      <div className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
+      <div className="px-4 py-3">
+        <div className="flex items-center">
           {/* Left section - Hamburger and Logo */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center logo-width">
             <button
               onClick={toggleSidebar}
               className="p-1 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none"
@@ -23,13 +21,13 @@ export default function Header({
             </button>
 
             <a href="/" className="text-xl font-bold text-green-600">
-              Chaldal
+              HatBazar
             </a>
           </div>
 
           {/* Middle section - Search */}
-          <div className="hidden lg:flex flex-1 max-w-2xl mx-4">
-            <div className="relative w-full">
+          <div className="flex w-full">
+            <div className="relative">
               <input
                 type="text"
                 placeholder="Search for products..."
@@ -42,7 +40,7 @@ export default function Header({
           </div>
 
           {/* Right section - Auth and Cart */}
-          <div className="flex items-center space-x-4">
+          {/* <div className="flex items-center space-x-4 fixed lg:static w-[320px]">
             <button className="hidden md:flex items-center space-x-1 text-gray-700 hover:text-green-600">
               <UserIcon className="h-5 w-5" />
               <span>Sign In</span>
@@ -52,7 +50,7 @@ export default function Header({
               <ShoppingCartIcon className="h-5 w-5" />
               <span className="hidden md:inline">Cart</span>
             </button>
-          </div>
+          </div> */}
         </div>
 
         {/* Mobile Search */}
