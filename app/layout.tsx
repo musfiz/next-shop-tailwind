@@ -6,8 +6,8 @@ import Layout from './components/Layout';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Chaldal Clone',
-  description: 'A responsive clone of chaldal.com',
+  title: 'Hat Bazar',
+  description: 'A responsive ecommerce for BD',
 };
 
 export default function RootLayout({

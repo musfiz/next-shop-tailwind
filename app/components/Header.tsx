@@ -11,7 +11,7 @@ export default function Header({
       <div className="px-4 py-3">
         <div className="flex items-center">
           {/* Left section - Hamburger and Logo */}
-          <div className="flex items-center logo-width">
+          <div className="flex items-center flex-shrink-0 w-62">
             <button
               onClick={toggleSidebar}
               className="p-1 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none"
@@ -27,7 +27,7 @@ export default function Header({
 
           {/* Middle section - Search */}
           <div className="flex w-full">
-            <div className="relative">
+            <div className="relative w-full">
               <input
                 type="text"
                 placeholder="Search for products..."
@@ -40,17 +40,17 @@ export default function Header({
           </div>
 
           {/* Right section - Auth and Cart */}
-          {/* <div className="flex items-center space-x-4 fixed lg:static w-[320px]">
+          <div className="flex items-center justify-center space-x-4 flex-shrink-0 ms-6">
             <button className="hidden md:flex items-center space-x-1 text-gray-700 hover:text-green-600">
               <UserIcon className="h-5 w-5" />
-              <span>Sign In</span>
+              <span>Log In</span>
             </button>
 
             <button className="flex items-center space-x-1 text-gray-700 hover:text-green-600">
               <ShoppingCartIcon className="h-5 w-5" />
               <span className="hidden md:inline">Cart</span>
             </button>
-          </div> */}
+          </div>
         </div>
 
         {/* Mobile Search */}

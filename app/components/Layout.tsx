@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Header from './Header';
 import Sidebar from './Sidebar';
+import CartSidebar from "./CartSidebar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -33,6 +34,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
         <main className={`flex-1 transition-all duration-300`}>
           {children}
+          <CartSidebar />
         </main>
       </div>
     </div>
