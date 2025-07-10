@@ -1,10 +1,24 @@
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+
 export default function Home() {
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Welcome to Homepage</h1>
-      <p className="text-gray-700">
-        This is a responsive website made with Next.js 15 and Tailwind CSS.
-      </p>
-    </div>
+    <>
+      <div className="banner w-full">
+        <div className="bg-[url('/homepage.png')] h-120 bg-cover bg-center">
+          <div className="h-full flex justify-center items-center">
+            <div className="relative w-150">
+              <input
+                type="text"
+                placeholder="Search for products..."
+                className="w-full py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              />
+              <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-green-600">
+                <MagnifyingGlassIcon className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
