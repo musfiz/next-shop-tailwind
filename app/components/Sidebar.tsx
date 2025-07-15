@@ -1,32 +1,63 @@
 'use client';
-import { XMarkIcon } from '@heroicons/react/24/outline';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { ChevronDownIcon, ChevronRightIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
-const menuItems = [
-  { name: 'Home', href: '/' },
-  { name: 'Groceries', href: '/groceries' },
-  { name: 'Fruits & Vegetables', href: '/fruits-vegetables' },
-  { name: 'Dairy & Chilled', href: '/dairy' },
-  { name: 'Beverages', href: '/beverages' },
-  { name: 'Snacks', href: '/snacks' },
-  { name: 'Household', href: '/household' },
-  { name: 'Personal Care', href: '/personal-care' },
-  { name: 'Cleaning Service', href: '/cleaning-service' },
-  { name: 'Health & Wellness', href: '/health-wellness' },
-  { name: 'Stationary & Office', href: '/stationary-office' },
-  { name: 'Toys & Sports', href: '/toys-sports' },
-  { name: 'Fashion & Lifestyle', href: '/fashion-lifestyle' },
-  { name: 'Beauty & Makeup', href: '/beauty-makeup' },
-  // { name: '', href: '/' },
-];
+interface MenuItem {
+  id: number;
+  label: string;
+  href: string;
+  icon?: React.ReactNode;
+  children?: MenuItem[];
+  isExpend?: boolean;
+  isActive?: boolean;
+}
 
-export default function Sidebar({
-  isOpen,
-  toggleSidebar
-}: {
-  isOpen: boolean;
-  toggleSidebar: () => void;
-}) {
+
+export default function Sidebar({ isOpen, toggleSidebar }: any) {
+
+  const [menuItems, setMenuItems] = useState<MenuItem[]>([
+    {
+      id: 1,
+      icon: 'food.png',
+      label: 'Groceries',
+      href: '/groceries',
+      isExpend: false,
+      isActive: false,
+      children: [
+        {
+          id: 1,
+          label: 'Fruits & Vegitable',
+          href: '/fruits-vegitable',
+          isActive: false
+        },
+        {
+          id: 2,
+          label: 'Meet & Fish',
+          href: '/meet-fish',
+          isActive: false
+        },
+        {
+          id: 3,
+          label: 'Cooking',
+          href: '/cooking',
+          isActive: false
+        }
+      ]
+    },
+    { id: 2, icon: 'personal.png', label: 'Personal Care', href: '/personal-care', isActive: false },
+    { id: 3, icon: 'toys.png', label: 'Toys & Sports', href: '/toys-sports', isActive: false },
+  ]);
+
+
+  const extendParent = (index: number) => {
+    setMenuItems(prevItems =>
+      prevItems.map((item, i) =>
+        i === index ? { ...item, isExpend: true, isActive: true } : { ...item, isExpend: false, isActive: false }
+      )
+    );
+  }
+
   useEffect(() => {
     if (isOpen) {
       // document.body.style.overflow = 'hidden';
@@ -39,19 +70,41 @@ export default function Sidebar({
     <>
       {/* Sidebar */}
       <aside
-        className={`sidebar fixed lg:static top-10 left-0 h-full w-64 bg-white shadow-lg lg:shadow-none z-40 transform transition-transform duration-300 ease-in-out
+        className={`sidebar fixed lg:static top-10 left-0 h-full w-78 bg-white shadow-lg lg:shadow-none z-40 transform transition-transform duration-300 ease-in-out
           ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'} mt-1`}
       >
         <nav className="p-2 overflow-y-auto h-[calc(100vh-4rem)]">
-          <ul className="space-y-1">
-            {menuItems.map((item) => (
-              <li key={item.name}>
-                <a
-                  href={item.href}
-                  className="block px-2 py-.5 text-gray-700 hover:bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 hover:text-white"
+          <ul className="space-y-0">
+            {menuItems.map((parent, parentIndex) => (
+              <li key={parentIndex}>
+                <Link
+                  href={parent.href}
+                  className={`flex justify-between items-center px-2 ${parent.isActive ? 'font-bold text-green-400' : 'text-gray-700'} hover:bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 hover:text-white`}
+                  onClick={() => { extendParent(parentIndex) }}
                 >
-                  {item.name}
-                </a>
+                  <div className="flex items-center p-1">
+                    {parent.icon && <img src={`/sidebar/${parent.icon}`} alt="No Icon" className='w-6 h-6 mr-2' />}
+                    <span className="text-[14px]">{parent.label}</span>
+                  </div>
+                  {parent.children ? (
+                    parent.isExpend ? (
+                      <ChevronDownIcon className="w-4 h-4" />
+                    ) : (
+                      <ChevronRightIcon className="w-4 h-4" />
+                    )
+                  ) : ''}
+                </Link>
+                <ul className={`${parent.isExpend ? 'block' : 'hidden'} ml-6 border-l border-gray-400 border-dotted pl-4`}>
+                  {parent.children?.map((child, childIndex) => (
+                    <li key={childIndex} className="flex justify-between items-center py-0 text-gray-700 hover:bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 hover:text-white">
+                      <Link href={child.href}>
+                        <div className="flex items-center p-1">
+                          <span className="text-[14px]">{child.label}</span>
+                        </div>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </li>
             ))}
           </ul>

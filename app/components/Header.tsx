@@ -1,5 +1,6 @@
 'use client';
 import { Bars3Icon, MagnifyingGlassIcon, UserIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 export default function Header({
   toggleSidebar
@@ -20,9 +21,9 @@ export default function Header({
               <Bars3Icon className="h-6 w-6" />
             </button>
 
-            <a href="/" className="text-xl font-bold text-green-600">
+            <Link href="/" className="text-xl font-bold text-green-600">
               HatBazar
-            </a>
+            </Link>
           </div>
 
           {/* Middle section - Search */}
