@@ -1,21 +1,23 @@
 import Link from 'next/link';
 
-export default function NotFound() {
+export default function Custom404() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
-      <div className="bg-white p-8 rounded-xl shadow-lg max-w-md w-full text-center">
-        <div className="text-8xl font-bold text-gray-800 mb-4">404</div>
-        <h1 className="text-2xl font-semibold text-gray-700 mb-4">Oops! Page not found</h1>
-        <p className="text-gray-600 mb-6">
-          We can't seem to find the page you're looking for.
-        </p>
-        <Link
-          href="/"
-          className="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200"
-        >
-          Return Home
-        </Link>
-      </div>
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      {/* Error Code */}
+      <h1 className="text-8xl md:text-9xl font-bold text-red-600 mb-4">404</h1>
+
+      {/* Error Message */}
+      <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-2">
+        Oops! Page Not Found
+      </h2>
+      <p className="text-gray-600 text-base md:text-lg mb-6 text-center px-4">
+        Sorry, we couldn't find the page you were looking for. Check the URL or go back home.
+      </p>
+
+      {/* Back to Home Button */}
+      <Link href="/" className="bg-pink-600 hover:bg-pink-700 text-white py-1 px-4 rounded-md shadow-md transition duration-300">
+        Back to Home
+      </Link>
     </div>
   );
 }

@@ -94,7 +94,7 @@ export default function Sidebar({ isOpen, toggleSidebar }: any) {
                     )
                   ) : ''}
                 </Link>
-                <ul className={`${parent.isExpend ? 'block' : 'hidden'} ml-6 border-l border-gray-400 border-dotted pl-4`}>
+                <ul className={`${parent.isExpend ? 'block' : 'hidden'} ml-6 border-l border-gray-400 border-dotted pl-4 transform transition-transform duration-700 ease-in-out`}>
                   {parent.children?.map((child, childIndex) => (
                     <li key={childIndex} className="flex justify-between items-center py-0 text-gray-700 hover:bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 hover:text-white">
                       <Link href={child.href}>

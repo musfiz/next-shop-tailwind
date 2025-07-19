@@ -6,7 +6,7 @@ export default function Page() {
       <div className="banner w-full">
         <div className="bg-[url('/homepage.png')] h-90 bg-cover bg-center">
           <div className="h-full flex justify-center items-center">
-            <div className="relative w-150">
+            <div className="relative md:w-100 lg:w-120 xl:w-150">
               <input
                 type="text"
                 placeholder="Search for products..."
