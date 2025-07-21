@@ -8,7 +8,7 @@ export default function Header({
   toggleSidebar: () => void;
 }) {
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white shadow-sm">
+    <header className="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-3">
       <div className="px-4 py-3">
         <div className="flex items-center">
           {/* Left section - Hamburger and Logo */}

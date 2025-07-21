@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <>
       <div className="w-full">
-        <div className="banner bg-[url('/homepage.png')] h-90 bg-cover bg-center">
+        <div className="banner bg-[url('/homepage.png')] h-100 bg-cover bg-center">
           <div className="h-full flex justify-center items-center">
             <div className="relative md:w-100 lg:w-120 xl:w-150">
               <input
@@ -53,49 +53,67 @@ export default function Page() {
             <div className="text-center text-xl mb-5">Popular Caregories</div>
             <Swiper
               cssMode={true}
-              spaceBetween={20}
-              slidesPerView={3}
-              modules={[Autoplay, Navigation]}
+              spaceBetween={40}
+              slidesPerView={8}
+              modules={[Autoplay]}
               // loop={true}
               autoplay={{
-                delay: 6000,
+                delay: 2000,
                 pauseOnMouseEnter: false,
               }}
-              navigation={true}
               className="bg-gray-50 cursor-pointer"
               onSlideChange={() => console.log('slide change')}
               onSwiper={(swipper) => console.log(swipper)}>
-              <SwiperSlide>
-                <div className="flex justify-center items-center w-60 h-70 rounded-sm shadow-xl border border-rose-200 bg-white">
 
-                </div>
-              </SwiperSlide>
 
+              <div className="flex justify-start items-center">
+                <SwiperSlide>
+                  <div className="items-center w-50 h-50 bg-white rounded-lg border border-gray-200"></div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="items-center w-50 h-50 bg-white rounded-lg border border-gray-200"></div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="items-center w-50 h-50 bg-white rounded-lg border border-gray-200"></div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="items-center w-50 h-50 bg-white rounded-lg border border-gray-200"></div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="items-center w-50 h-50 bg-white rounded-lg border border-gray-200"></div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="items-center w-50 h-50 bg-white rounded-lg border border-gray-200"></div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="items-center w-50 h-50 bg-white rounded-lg border border-gray-200"></div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="items-center w-50 h-50 bg-white rounded-lg border border-gray-200"></div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="items-center w-50 h-50 bg-white rounded-lg border border-gray-200"></div>
+                </SwiperSlide>
+              </div>
             </Swiper>
           </div>
           <div className="new-product mt-6">
             <div className="text-center text-xl mb-5">New Products</div>
-            <Swiper
-              cssMode={true}
-              spaceBetween={20}
-              slidesPerView={3}
-              modules={[Autoplay, Navigation]}
-              // loop={true}
-              autoplay={{
-                delay: 6000,
-                pauseOnMouseEnter: false,
-              }}
-              navigation={true}
-              className="bg-gray-50 cursor-pointer"
-              onSlideChange={() => console.log('slide change')}
-              onSwiper={(swipper) => console.log(swipper)}>
-              <SwiperSlide>
-                <div className="flex justify-center items-center w-60 h-70 rounded-sm shadow-xl border border-rose-200 bg-white">
-
-                </div>
-              </SwiperSlide>
-
-            </Swiper>
+            <div className="flex justify-center items-center flex-wrap">
+              <div className="w-50 h-60 rounded-sm shadow-xl border border-gray-200 bg-white me-4 mt-2"></div>
+              <div className="w-50 h-60 rounded-sm shadow-xl border border-gray-200 bg-white me-4 mt-2"></div>
+              <div className="w-50 h-60 rounded-sm shadow-xl border border-gray-200 bg-white me-4 mt-2"></div>
+              <div className="w-50 h-60 rounded-sm shadow-xl border border-gray-200 bg-white me-4 mt-2"></div>
+              <div className="w-50 h-60 rounded-sm shadow-xl border border-gray-200 bg-white me-4 mt-2"></div>
+              <div className="w-50 h-60 rounded-sm shadow-xl border border-gray-200 bg-white me-4 mt-2"></div>
+              <div className="w-50 h-60 rounded-sm shadow-xl border border-gray-200 bg-white me-4 mt-2"></div>
+              <div className="w-50 h-60 rounded-sm shadow-xl border border-gray-200 bg-white me-4 mt-2"></div>
+              <div className="w-50 h-60 rounded-sm shadow-xl border border-gray-200 bg-white me-4 mt-2"></div>
+              <div className="w-50 h-60 rounded-sm shadow-xl border border-gray-200 bg-white me-4 mt-2"></div>
+              <div className="w-50 h-60 rounded-sm shadow-xl border border-gray-200 bg-white me-4 mt-2"></div>
+              <div className="w-50 h-60 rounded-sm shadow-xl border border-gray-200 bg-white me-4 mt-2"></div>
+              <div className="w-50 h-60 rounded-sm shadow-xl border border-gray-200 bg-white me-4 mt-2"></div>
+            </div>
           </div>
         </div>
       </div >

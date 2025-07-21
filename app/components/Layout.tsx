@@ -35,10 +35,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
         <main className={`w-screen h-screen overflow-y-scroll transition-all duration-300`}>
           <div className="flex-1">
-            {children}
+            <div className="min-h-122">
+              {children}
+            </div>
+            <Footer />
           </div>
           <CartSidebar />
-          <Footer />
         </main>
       </div>
     </div>

@@ -5,8 +5,8 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube } from 'react
 export default function Footer({ }) {
   return (
     <>
-      <footer className=" text-white pt-8" >
-        <div className="container mx-auto px-4 bg-gray-300">
+      <footer className="text-white pt-8">
+        <div className="w-full bg-gray-300">
           {/* Main Footer Content */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-8">
 
@@ -83,7 +83,7 @@ export default function Footer({ }) {
           </div>
         </div>
         {/* Divider */}
-        <div className="border-t border-teal-400"></div>
+        <div className="border-t"></div>
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center bg-white h-15 mb-16 px-10">
           <p className="text-gray-500 text-sm">
