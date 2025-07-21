@@ -12,17 +12,17 @@ export default function Header({
       <div className="px-4 py-3">
         <div className="flex items-center">
           {/* Left section - Hamburger and Logo */}
-          <div className="flex items-center flex-shrink-0 w-62">
+          <div className="flex items-center w-84">
             <button
               onClick={toggleSidebar}
-              className="p-1 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none"
+              className="m-1 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none"
               aria-label="Toggle sidebar"
             >
-              <Bars3Icon className="h-6 w-6" />
+              <Bars3Icon className="w-8 h-6" />
             </button>
 
-            <Link href="/" className="text-xl font-bold text-green-600">
-              HatBazar
+            <Link href="/" className="text-xl font-bold text-green-600 pt-[3]">
+              আমাদের বাজার
             </Link>
           </div>
 

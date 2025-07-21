@@ -24,12 +24,12 @@ const CartSidebar = () => {
         onClick={toggleCart}
         className="fixed right-0 top-1/2 transform -translate-y-1/2 z-40 flex items-center cursor-pointer shadow-xl/20"
       >
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center bg-white">
           <div className="bg-gray-400 text-white flex flex-col items-center">
             <img src="/bag.png" alt="No Image" className="w-8 h-10  mt-1 mx-1" />
-            <div className="text-sm px-2 text-amber-200">{cartItems.length} ITEMS</div>
+            <div className="text-xs font-bold px-2 py-1 text-amber-200">{cartItems.length} ITEMS</div>
           </div>
-          <div className="bg-white text-black">
+          <div className="text-gray-700 font-bold">
             ৳ 0
           </div>
         </div>

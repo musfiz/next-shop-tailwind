@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Noto_Sans_Bengali } from 'next/font/google';
 import './globals.css';
 import Layout from './components/Layout';
 
-const inter = Inter({ subsets: ['latin'] });
+const font = Noto_Sans_Bengali({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Hat Bazar',
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + `  overflow-hidden`}>
+      <body className={font.className + `  overflow-hidden`}>
         <Layout>{children}</Layout>
       </body>
     </html>

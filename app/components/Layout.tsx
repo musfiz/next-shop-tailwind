@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import CartSidebar from "./CartSidebar";
+import Footer from './Footer';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -28,15 +29,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="bg-gray-50">
       <Header toggleSidebar={toggleSidebar} />
       <div className="flex mt-16">
         <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
         <main className={`w-screen h-screen overflow-y-scroll transition-all duration-300`}>
-          <div className="flex-1 ms-4">
+          <div className="flex-1">
             {children}
           </div>
           <CartSidebar />
+          <Footer />
         </main>
       </div>
     </div>
