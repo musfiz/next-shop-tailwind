@@ -49,7 +49,8 @@ export default function Page() {
             </Swiper>
           </div>
 
-          <div className="popular-category mt-3">
+          <div className="popular-category mt-6">
+            <div className="text-center text-xl mb-5">Popular Caregories</div>
             <Swiper
               cssMode={true}
               spaceBetween={20}
@@ -65,7 +66,31 @@ export default function Page() {
               onSlideChange={() => console.log('slide change')}
               onSwiper={(swipper) => console.log(swipper)}>
               <SwiperSlide>
-                <div className="flex justify-center items-center w-70 h-50 rounded-sm shadow-2xl border-2">
+                <div className="flex justify-center items-center w-60 h-70 rounded-sm shadow-xl border border-rose-200 bg-white">
+
+                </div>
+              </SwiperSlide>
+
+            </Swiper>
+          </div>
+          <div className="new-product mt-6">
+            <div className="text-center text-xl mb-5">New Products</div>
+            <Swiper
+              cssMode={true}
+              spaceBetween={20}
+              slidesPerView={3}
+              modules={[Autoplay, Navigation]}
+              // loop={true}
+              autoplay={{
+                delay: 6000,
+                pauseOnMouseEnter: false,
+              }}
+              navigation={true}
+              className="bg-gray-50 cursor-pointer"
+              onSlideChange={() => console.log('slide change')}
+              onSwiper={(swipper) => console.log(swipper)}>
+              <SwiperSlide>
+                <div className="flex justify-center items-center w-60 h-70 rounded-sm shadow-xl border border-rose-200 bg-white">
 
                 </div>
               </SwiperSlide>
