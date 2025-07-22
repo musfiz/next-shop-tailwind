@@ -147,7 +147,7 @@ export default function Sidebar({ isOpen, toggleSidebar }: any) {
     <>
       {/* Sidebar */}
       <aside
-        className={`sidebar fixed lg:static top-10 left-0 h-full w-78 border-r border-gray-200 bg-white shadow-lg lg:shadow-none z-40 transform transition-transform duration-300 ease-in-out
+        className={`sidebar fixed lg:static top-10 left-0 h-screen w-78 border-r border-gray-200 bg-white shadow-lg lg:shadow-none z-40 transform transition-transform duration-300 ease-in-out
           ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'} mt-1`}
       >
         <nav className="p-2 overflow-y-auto h-[calc(100vh-4rem)]">

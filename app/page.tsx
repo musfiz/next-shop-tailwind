@@ -61,6 +61,32 @@ export default function Page() {
                 delay: 2000,
                 pauseOnMouseEnter: false,
               }}
+              breakpoints={{
+                320: {
+                  slidesPerView: 3,
+                  spaceBetween: 10,
+                },
+                640: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 4,
+                  spaceBetween: 40,
+                },
+                1024: {
+                  slidesPerView: 5,
+                  spaceBetween: 40,
+                },
+                1366: {
+                  slidesPerView: 6,
+                  spaceBetween: 20,
+                },
+                1920: {
+                  slidesPerView: 7,
+                  spaceBetween: 20,
+                },
+              }}
               className="bg-gray-50 cursor-pointer"
               onSlideChange={() => console.log('slide change')}
               onSwiper={(swipper) => console.log(swipper)}>

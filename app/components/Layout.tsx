@@ -33,7 +33,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Header toggleSidebar={toggleSidebar} />
       <div className="flex mt-16">
         <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
-        <main className={`w-screen h-screen overflow-y-scroll transition-all duration-300`}>
+        <main className={`
+            w-screen max-h-screen 
+            overflow-y-scroll 
+            transition-all 
+            duration-300 
+            [&::-webkit-scrollbar]:w-2
+          [&::-webkit-scrollbar-track]:bg-gray-100
+          [&::-webkit-scrollbar-thumb]:bg-gray-300
+          dark:[&::-webkit-scrollbar-track]:bg-gray-300
+          dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500`}>
           <div className="flex-1">
             <div className="min-h-122">
               {children}

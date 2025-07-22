@@ -22,7 +22,7 @@ const CartSidebar = () => {
       {/* Cart Toggle Button (fixed on right side) */}
       <div
         onClick={toggleCart}
-        className="fixed right-4 top-1/2 transform -translate-y-1/2 z-40 flex items-center cursor-pointer shadow-xl/20"
+        className="fixed right-[8.4] top-1/2 transform -translate-y-1/2 z-40 flex items-center cursor-pointer shadow-xl/20"
       >
         <div className="flex flex-col justify-center items-center bg-white">
           <div className="bg-gray-400 text-white flex flex-col items-center">

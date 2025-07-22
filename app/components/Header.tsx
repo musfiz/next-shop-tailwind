@@ -27,7 +27,7 @@ export default function Header({
           </div>
 
           {/* Middle section - Search */}
-          <div className="flex w-full">
+          <div className="flex w-full xs:hidden">
             <div className="relative w-full">
               <input
                 type="text"
