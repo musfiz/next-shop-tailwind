@@ -6,7 +6,7 @@ import Layout from './components/Layout';
 const font = Noto_Sans_Bengali({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Hat Bazar',
+  title: 'আমাদের বাজার',
   description: 'A responsive ecommerce for BD',
 };
 

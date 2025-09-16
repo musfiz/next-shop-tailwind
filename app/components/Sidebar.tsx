@@ -72,13 +72,13 @@ export default function Sidebar({ isOpen, toggleSidebar }: any) {
           href: '/womens-care',
         },
         {
-          id: 1,
+          id: 2,
           label: "Men's Care",
           href: '/men-care',
         }
       ]
     },
-    { id: 3, icon: 'toys.png', label: 'Toys & Sports', href: '/toys-sports', },
+    { id: 3, icon: 'electric.png', label: 'Electric & Electronics', href: '/electronics', },
   ]);
 
   const extendParent = (index: number) => {

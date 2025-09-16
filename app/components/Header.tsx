@@ -18,10 +18,10 @@ export default function Header({
               className="m-1 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none"
               aria-label="Toggle sidebar"
             >
-              <Bars3Icon className="w-8 h-6" />
+              <Bars3Icon className="w-10 h-8 cursor-pointer" />
             </button>
 
-            <Link href="/" className="text-xl font-bold text-green-600 pt-[3]">
+            <Link href="/" className="text-2xl font-bold text-green-600 pt-[3]">
               আমাদের বাজার
             </Link>
           </div>
