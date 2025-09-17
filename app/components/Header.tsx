@@ -2,11 +2,17 @@
 import { Bars3Icon, MagnifyingGlassIcon, UserIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
-export default function Header({
-  toggleSidebar
-}: {
+
+interface HeaderProps {
   toggleSidebar: () => void;
-}) {
+  searchBar: boolean;
+}
+
+
+export default function Header({
+  toggleSidebar,
+  searchBar
+}: HeaderProps) {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-3">
       <div className="px-4 py-3">
@@ -29,14 +35,19 @@ export default function Header({
           {/* Middle section - Search */}
           <div className="flex w-full xs:hidden">
             <div className="relative w-full">
-              <input
-                type="text"
-                placeholder="Search for products..."
-                className="w-full py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              />
-              <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-green-600">
-                <MagnifyingGlassIcon className="h-5 w-5" />
-              </button>
+              {searchBar ? (
+                <>
+                  <input
+                    type="text"
+                    placeholder="Search for products..."
+                    className="w-full py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  />
+                  <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-green-600">
+                    <MagnifyingGlassIcon className="h-5 w-5" />
+                  </button>
+                </>
+              ) : ''}
+
             </div>
           </div>
 

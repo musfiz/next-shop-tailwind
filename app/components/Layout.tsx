@@ -9,6 +9,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
+  const [isSearchBar, setIsSearchBar] = useState(true);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1024);
@@ -30,7 +32,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="bg-gray-50">
-      <Header toggleSidebar={toggleSidebar} />
+      <Header toggleSidebar={toggleSidebar} searchBar={isSearchBar} />
       <div className="flex mt-16">
         <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
         <main className={`
